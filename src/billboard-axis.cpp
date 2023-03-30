@@ -33,16 +33,16 @@ public:
 
   void mouseMotion(int x, int y, int dx, int dy) {
       if (mouseIsDown(GLFW_MOUSE_BUTTON_LEFT)){
-         azimuth+=(dx/2);
+         azimuth-=(dx/2);
          elevation+=(dy/2);
-         if(azimuth<-180){
-            azimuth+=360;
+         if(azimuth<-90){
+            azimuth+=1800;
          }
          if(elevation<-90){
             elevation = -90;
          }
-         if(azimuth>180){
-            azimuth-=360;
+         if(azimuth>90){
+            azimuth-=180;
          }
          if(elevation>90){
             elevation = 90;
@@ -54,9 +54,9 @@ public:
 
   void updateEyePos(){
     float pie = 3.1415926;
-    float eyeX = 2* cos(azimuth/360.0*2*pie)*cos(elevation/360.0*2*pie);
+    float eyeX = 2* sin(azimuth/360.0*2*pie)*cos(elevation/360.0*2*pie);
     float eyeY = 2* sin(elevation/360.0*2*pie);
-    float eyeZ = 2* sin(azimuth/360.0*2*pie)*cos(elevation/360.0*2*pie);
+    float eyeZ = 2* cos(azimuth/360.0*2*pie)*cos(elevation/360.0*2*pie);
     eyePos = vec3(eyeX,eyeY,eyeZ);
   }
 
@@ -86,9 +86,10 @@ public:
 
     float nx = dot(eyePos,vec3(1,0,0));
     float nz = dot(eyePos,vec3(0,0,1));
+
     float angle = atan(nx/nz);
-    
-    std::cout<<angle<<std::endl;
+
+
     // draw tree
     renderer.texture("Image", "tree");
     renderer.rotate(vec3(0,angle,0));    
