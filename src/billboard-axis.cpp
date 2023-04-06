@@ -1,5 +1,9 @@
 // Bryn Mawr College, alinen, 2020
-//
+//--------------------------------------------------
+// Author: Yue Chen
+// Date: 03/31/2023
+// Description: Create a 3D tree using axis billboard
+//--------------------------------------------------
 
 #include <cmath>
 #include <string>

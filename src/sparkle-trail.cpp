@@ -1,5 +1,10 @@
 // Bryn Mawr College, alinen, 2020
-//
+//--------------------------------------------------
+// Author: Yue Chen
+// Date: 03/31/2023
+// Description: Create the sparkle-trail effect by 
+// using particle system
+//--------------------------------------------------
 
 #include <cmath>
 #include <string>
@@ -127,7 +132,6 @@ public:
     renderer.perspective(glm::radians(60.0f), aspect, 0.1f, 50.0f);
 
     renderer.lookAt(eyePos, lookPos, up);
-    //renderer.sprite(position, vec4(1.0f), 0.25f);
     updateConfetti(dt()/2);
     drawConfetti();
     renderer.endShader();
