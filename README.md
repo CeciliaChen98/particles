@@ -2,7 +2,7 @@
 
 Implements particle demos
 
-TODO: Add a representative image for your project here
+![avatar](/arts/fireworks.png)
 
 ## How to build
 
@@ -48,10 +48,23 @@ particles/build $ ../bin/explosion
 ```
 
 ## Demo of basic features
-
-TODO: Document the main demos your viewer (shaders + models)
+```
+a sparkle trailing effect
+```
+![avatar](/arts/sparkle-trail.gif)
+```
+implement an explosion effect based on a sprite sheet
+```
+![avatar](/arts/explosion.gif)
+```
+implement an axis billboard that rotates around the Y axis
+```
+![avatar](/arts/billboard-axis.gif)
 
 ## Unique features 
 
-TODO: Show the unique features you made
+```
+Fireworks
+```
+![avatar](/arts/fireworks.gif)
 
